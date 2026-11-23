@@ -39,7 +39,7 @@ NEXT_OUTPUT=export npm run build       # 静态导出到 out/（静态托管用�
 - push 到 `master` 后自动构建部署
 - 构建命令 `npm ci && npm run build`，启动命令 `npm start`
 - 环境变量 `NEXT_PUBLIC_SITE_URL=https://beyondonline.org` 决定 canonical、RSS 与分享链接里的站点地址
-- 免费实例在 15 分钟无访问后休眠，首次访问需要几十秒唤醒；升级到付费实例可保持常驻
+- 实例规格 Starter（0.5 CPU / 512 MB），常驻运行；免费实例闲置 15 分钟会休眠、首次访问需几十秒唤醒
 
 ## 路由
 

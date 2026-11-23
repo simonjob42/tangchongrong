@@ -33,7 +33,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## 部署
 
 - 默认输出标准 Next.js 服务：`npm run build` 后用 `npm start` 启动。
-- Render：push 到 `master` 自动部署，配置见 `render.yaml`；免费实例闲置会休眠。
+- Render：push 到 `master` 自动部署，配置见 `render.yaml`；实例为 Starter（0.5 CPU / 512 MB），常驻不休眠。
 - `NEXT_OUTPUT=standalone` 供 Docker 使用；`NEXT_OUTPUT=export` 可导出静态站到 `out/`。
 - 页面在构建时预渲染；需要真正的动态渲染时，移除对应页面的 `dynamicParams = false` 或静态标记。
 - `NEXT_PUBLIC_BASE_PATH` 只在子路径托管时需要，Render 与本机都不要设置。

@@ -2,7 +2,8 @@ services:
   - type: web
     name: tang-chongrong
     runtime: node
-    plan: free
+    # Starter：0.5 CPU / 512 MB，常驻不休眠（免费实例闲置 15 分钟后会挂起）
+    plan: starter
     region: singapore
     branch: master
     buildCommand: npm ci && npm run build
