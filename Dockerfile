@@ -47,6 +47,8 @@ COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 
 ENV NODE_ENV=production
+# Build a standalone server image instead of the GitHub Pages static export.
+ENV NEXT_OUTPUT=standalone
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry

@@ -20,14 +20,32 @@ Next.js 16（App Router、React 19、TypeScript strict）、Tailwind CSS v4、lu
 npm install
 npm run dev            # 开发模式，http://localhost:3000
 npm run check          # lint + typecheck + build
-npm run build
-npx next start -p 3100 # 生产预览；换一个端口可避开已占用端口
+npm run build          # 静态导出到 out/
+npx serve out          # 预览静态产物
 ```
 
-`next.config` 使用 `output: 'standalone'`，部署时也可以直接运行：
+`next.config.ts` 默认使用 `output: 'export'`，把整站导出为 `out/`。设置 `NEXT_OUTPUT=standalone` 时改为 standalone 构建（Dockerfile 用这个模式）：
 
 ```bash
+NEXT_OUTPUT=standalone npm run build
 node .next/standalone/server.js
+```
+
+## 部署
+
+站点通过 GitHub Actions 发布到 GitHub Pages：
+
+- 线上地址：<https://simonjob42.github.io/tangchongrong/>
+- 工作流：`.github/workflows/deploy-pages.yml`（push 到 `master` 或手动触发）
+- 构建时设置 `NEXT_PUBLIC_BASE_PATH=/tangchongrong` 与 `NEXT_PUBLIC_SITE_URL`，因为 Pages 项目站点挂在仓库子路径下
+
+本地想按 Pages 的子路径行为预览：
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/tangchongrong npm run build
+mkdir -p /tmp/tang-pages && ln -sfn "$PWD/out" /tmp/tang-pages/tangchongrong
+(cd /tmp/tang-pages && python3 -m http.server 4310)
+# 打开 http://localhost:4310/tangchongrong/
 ```
 
 ## 路由

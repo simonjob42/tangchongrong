@@ -7,6 +7,8 @@ import {
 } from '@/components/sites/tang-chongrong/data/sermons';
 import { SITE } from '@/components/sites/tang-chongrong/data/site';
 
+export const dynamic = 'force-static';
+
 export async function GET() {
   const seriesLines = SERIES.map(
     (series) =>
@@ -37,7 +39,7 @@ ${seriesLines}
 
 ## 单篇讲道
 
-每篇讲道有独立页面：${SITE.url}/ep/{slug}
+每篇讲道有独立页面：${SITE.url}/ep/{slug}/
 页面包含：主题、所属系列与集数、时长、YouTube 嵌入播放器、系列简介、相邻讲道与相关讲道。
 
 ## 内容说明

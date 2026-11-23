@@ -31,7 +31,9 @@ export default async function SermonPage({ params }: Props) {
   return <SermonDetail sermon={sermon} />;
 }
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  // Pre-render a manageable subset; the rest render on demand.
-  return SERMONS.slice(0, 60).map((sermon) => ({ slug: sermon.slug }));
+  // Static export: every sermon page must exist at build time.
+  return SERMONS.map((sermon) => ({ slug: sermon.slug }));
 }

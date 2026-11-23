@@ -19,7 +19,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - **Framework:** Next.js 16（App Router、React 19、TypeScript strict）
 - **UI:** shadcn/ui（Base UI primitives、Tailwind CSS v4、`cn()`）
 - **Icons:** Lucide React
-- **Deployment:** Vercel 或 `output: 'standalone'` 自托管
+- **Deployment:** GitHub Pages（`output: 'export'`，子路径 `/tangchongrong`）；Docker 用 `NEXT_OUTPUT=standalone`
 
 ## 命令
 
@@ -29,6 +29,13 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - `npm run typecheck` — TypeScript
 - `npm run check` — lint + typecheck + build
 - `node scripts/build-tang-data.mjs` — 从 `data/yt-dlp/` 重新生成讲道数据
+
+## 部署
+
+- 静态导出：`npm run build` 生成 `out/`；不要用 `next start`。
+- GitHub Pages：push 到 `master` 触发 `.github/workflows/deploy-pages.yml`，线上地址 <https://simonjob42.github.io/tangchongrong/>。
+- Pages 构建需要 `NEXT_PUBLIC_BASE_PATH=/tangchongrong`；本地开发不要设置。
+- 所有页面必须在构建时预渲染（`generateStaticParams` 覆盖全部条目），新增动态路由时要注意。
 
 ## 目录
 

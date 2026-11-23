@@ -10,6 +10,8 @@ function escapeXml(value: string): string {
     .replace(/'/g, '&apos;');
 }
 
+export const dynamic = 'force-static';
+
 export async function GET() {
   const items = SERMONS.slice(0, 100);
   const lastBuildDate = new Date().toUTCString();
@@ -28,7 +30,7 @@ export async function GET() {
     </itunes:category>
 ${items
   .map((sermon) => {
-    const url = `${SITE.url}/ep/${sermon.slug}`;
+    const url = `${SITE.url}/ep/${sermon.slug}/`;
     const description = `${sermon.seriesName}${sermon.number != null ? `第 ${sermon.number} 讲` : ''}：${sermon.topic}（${sermon.duration}）。原始视频：https://www.youtube.com/watch?v=${sermon.youtubeId}`;
 
     return `    <item>
