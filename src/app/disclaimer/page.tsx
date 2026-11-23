@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { canonicalAlternates } from '@/components/sites/tang-chongrong/data/site';
+import { canonicalAlternates, SITE } from '@/components/sites/tang-chongrong/data/site';
 
 export const metadata: Metadata = {
   title: '版权与声明',
@@ -92,6 +92,20 @@ export default function DisclaimerPage() {
             </div>
           </section>
         ))}
+      </div>
+
+      <div className="mt-10 rounded-lg border border-gray-200 bg-gray-50 p-5">
+        <h2 className="text-base font-semibold text-gray-900">联系</h2>
+        <p className="mt-2 text-sm leading-relaxed text-gray-600">
+          版权更正、内容移除或其他事宜，请发邮件至{' '}
+          <a
+            href={`mailto:${SITE.email}`}
+            className="text-gray-900 underline underline-offset-4 hover:text-primary"
+          >
+            {SITE.email}
+          </a>
+          。
+        </p>
       </div>
 
       <div className="mt-10 flex flex-wrap gap-3 border-t border-gray-100 pt-8">

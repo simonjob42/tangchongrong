@@ -54,6 +54,12 @@ export function Footer() {
               >
                 YouTube 频道 ↗
               </a>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="text-gray-600 underline-offset-4 hover:text-gray-900 hover:underline"
+              >
+                {SITE.email}
+              </a>
               <Link
                 href="/disclaimer"
                 className="text-gray-600 underline-offset-4 hover:text-gray-900 hover:underline"

@@ -25,7 +25,7 @@ export const SITE = {
   description: `收录唐崇荣牧师 ${TOTAL_SERMONS} 篇公开讲道与问答，其中 ${TOTAL_TONG} 篇标题署名唐崇荣，涵盖创世记、约翰福音、罗马书、希伯来书等逐卷讲解，以及启示录七间教会、圣经中上帝对人的呼召、归正福音教会主日证道等 ${SERIES.length} 个系列，共约 ${TOTAL_HOURS} 小时。按系列、主题与关键词检索，并附 YouTube 原始视频。`,
   url: SITE_URL,
   author: 'ximen',
-  email: '',
+  email: 'peter@ekklesiabeyond.org',
   github: '',
   youtube: 'https://www.youtube.com/@Gudao200/playlists',
   youtubeChannel: 'https://www.youtube.com/@Gudao200',
