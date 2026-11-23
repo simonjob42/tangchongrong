@@ -24,7 +24,7 @@ export const SITE = {
   tagline: '把唐崇荣牧师六十余年的事奉，按系列整理成一份可以随时查阅的讲道档案',
   description: `收录唐崇荣牧师 ${TOTAL_SERMONS} 篇公开讲道与问答，其中 ${TOTAL_TONG} 篇标题署名唐崇荣，涵盖创世记、约翰福音、罗马书、希伯来书等逐卷讲解，以及启示录七间教会、圣经中上帝对人的呼召、归正福音教会主日证道等 ${SERIES.length} 个系列，共约 ${TOTAL_HOURS} 小时。按系列、主题与关键词检索，并附 YouTube 原始视频。`,
   url: SITE_URL,
-  author: 'qiaomu',
+  author: 'ximen',
   email: '',
   github: '',
   youtube: 'https://www.youtube.com/@Gudao200/playlists',
