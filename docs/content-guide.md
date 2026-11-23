@@ -1,6 +1,6 @@
 # 内容更新指南
 
-站点内容分两类：**自动生成的讲道目录**与**手写的编辑内容**。改完之后 push 到 `master`，GitHub Actions 会自动构建并发布到 <https://simonjob42.github.io/tangchongrong/>。
+站点内容分两类：**自动生成的讲道目录**与**手写的编辑内容**。改完之后 push 到 `master`，Render 会自动构建并发布到 <https://tang-chongrong.onrender.com>。
 
 ## 数据流
 
@@ -35,7 +35,7 @@ data/yt-dlp/*.txt  →  scripts/build-tang-data.mjs  →  src/components/sites/t
    git push origin master
    ```
 
-   push 后到仓库 Actions 标签查看部署进度，约 1 分钟上线。
+   push 后到 Render 控制台的服务页面查看部署进度，约 1–2 分钟上线。
 
 ### 标题解析不正确时
 
@@ -71,13 +71,13 @@ data/yt-dlp/*.txt  →  scripts/build-tang-data.mjs  →  src/components/sites/t
 
 ## 四、发布与回滚
 
-- 发布：push 到 `master` 即触发 `.github/workflows/deploy-pages.yml`，无需手动部署。
-- 回滚：`git revert <commit>` 后 push，Pages 会重新部署上一版。
+- 发布：push 到 `master` 即触发 Render 自动部署，无需手动操作。
+- 回滚：`git revert <commit>` 后 push，Render 会重新部署上一版。
 - 只改文案不碰数据时，不需要运行生成脚本。
 
 ## 五、注意事项
 
 - 站点是静态导出，所有页面必须在构建时生成。新增动态路由时 `generateStaticParams` 要覆盖全部条目，否则线上 404。
 - 不提交音视频文件，只提交标题、时长、视频 ID。
-- 本地开发不要设置 `NEXT_PUBLIC_BASE_PATH`；Pages 构建在 workflow 里设为 `/tangchongrong`。
+- `NEXT_PUBLIC_BASE_PATH` 只在子路径托管时需要；Render 和本地开发都不用设置。
 - 本站只做索引与导读，讲道内容版权归原讲员与发布机构所有。

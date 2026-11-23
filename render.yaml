@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: tang-chongrong
+    runtime: node
+    plan: free
+    region: singapore
+    branch: master
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      # 上线后如果服务名不同，把这里和 Render 控制台里的值一起改掉
+      - key: NEXT_PUBLIC_SITE_URL
+        value: https://tang-chongrong.onrender.com

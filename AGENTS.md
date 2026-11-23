@@ -19,7 +19,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - **Framework:** Next.js 16（App Router、React 19、TypeScript strict）
 - **UI:** shadcn/ui（Base UI primitives、Tailwind CSS v4、`cn()`）
 - **Icons:** Lucide React
-- **Deployment:** GitHub Pages（`output: 'export'`，子路径 `/tangchongrong`）；Docker 用 `NEXT_OUTPUT=standalone`
+- **Deployment:** Render Web Service（`next start`，见 `render.yaml`）；Docker 用 `NEXT_OUTPUT=standalone`
 
 ## 命令
 
@@ -32,10 +32,11 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## 部署
 
-- 静态导出：`npm run build` 生成 `out/`；不要用 `next start`。
-- GitHub Pages：push 到 `master` 触发 `.github/workflows/deploy-pages.yml`，线上地址 <https://simonjob42.github.io/tangchongrong/>。
-- Pages 构建需要 `NEXT_PUBLIC_BASE_PATH=/tangchongrong`；本地开发不要设置。
-- 所有页面必须在构建时预渲染（`generateStaticParams` 覆盖全部条目），新增动态路由时要注意。
+- 默认输出标准 Next.js 服务：`npm run build` 后用 `npm start` 启动。
+- Render：push 到 `master` 自动部署，配置见 `render.yaml`；免费实例闲置会休眠。
+- `NEXT_OUTPUT=standalone` 供 Docker 使用；`NEXT_OUTPUT=export` 可导出静态站到 `out/`。
+- 页面在构建时预渲染；需要真正的动态渲染时，移除对应页面的 `dynamicParams = false` 或静态标记。
+- `NEXT_PUBLIC_BASE_PATH` 只在子路径托管时需要，Render 与本机都不要设置。
 
 ## 目录
 

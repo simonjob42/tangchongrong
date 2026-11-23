@@ -1,12 +1,19 @@
 import type { NextConfig } from "next";
 
-// GitHub Pages project sites are served from /<repo>. Set NEXT_PUBLIC_BASE_PATH
-// (e.g. "/tangchongrong") when building for Pages; leave it empty for local dev.
+// Sub-path hosting (GitHub Pages project sites) can set e.g. "/tangchongrong".
+// Render serves the site at the root, so leave it empty there.
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const outputMode = process.env.NEXT_OUTPUT;
 
 const nextConfig: NextConfig = {
-  // GitHub Pages needs a fully static site; the Dockerfile builds standalone.
-  output: process.env.NEXT_OUTPUT === "standalone" ? "standalone" : "export",
+  // Default: standard Next.js server (`next start`), used by Render.
+  // NEXT_OUTPUT=standalone for the Docker image; NEXT_OUTPUT=export for a static site.
+  output:
+    outputMode === "export"
+      ? "export"
+      : outputMode === "standalone"
+        ? "standalone"
+        : undefined,
   basePath,
   assetPrefix: basePath || undefined,
   trailingSlash: true,

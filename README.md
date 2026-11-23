@@ -20,33 +20,26 @@ Next.js 16（App Router、React 19、TypeScript strict）、Tailwind CSS v4、lu
 npm install
 npm run dev            # 开发模式，http://localhost:3000
 npm run check          # lint + typecheck + build
-npm run build          # 静态导出到 out/
-npx serve out          # 预览静态产物
+npm run build          # 生产构建
+npm start              # 生产服务器，http://localhost:3000
 ```
 
-`next.config.ts` 默认使用 `output: 'export'`，把整站导出为 `out/`。设置 `NEXT_OUTPUT=standalone` 时改为 standalone 构建（Dockerfile 用这个模式）：
+`next.config.ts` 默认输出标准 Next.js 服务（`next start`），支持服务端渲染与动态路由。另有两种可选模式：
 
 ```bash
-NEXT_OUTPUT=standalone npm run build
-node .next/standalone/server.js
+NEXT_OUTPUT=standalone npm run build   # Docker 镜像用
+NEXT_OUTPUT=export npm run build       # 静态导出到 out/（静态托管用）
 ```
 
 ## 部署
 
-站点通过 GitHub Actions 发布到 GitHub Pages：
+站点部署在 Render，配置见 [`render.yaml`](render.yaml)：
 
-- 线上地址：<https://simonjob42.github.io/tangchongrong/>
-- 工作流：`.github/workflows/deploy-pages.yml`（push 到 `master` 或手动触发）
-- 构建时设置 `NEXT_PUBLIC_BASE_PATH=/tangchongrong` 与 `NEXT_PUBLIC_SITE_URL`，因为 Pages 项目站点挂在仓库子路径下
-
-本地想按 Pages 的子路径行为预览：
-
-```bash
-NEXT_PUBLIC_BASE_PATH=/tangchongrong npm run build
-mkdir -p /tmp/tang-pages && ln -sfn "$PWD/out" /tmp/tang-pages/tangchongrong
-(cd /tmp/tang-pages && python3 -m http.server 4310)
-# 打开 http://localhost:4310/tangchongrong/
-```
+- 线上地址：<https://tang-chongrong.onrender.com>（服务名可改）
+- push 到 `master` 后自动构建部署
+- 构建命令 `npm ci && npm run build`，启动命令 `npm start`
+- 环境变量 `NEXT_PUBLIC_SITE_URL` 决定 canonical、RSS 与分享链接里的站点地址
+- 免费实例在 15 分钟无访问后休眠，首次访问需要几十秒唤醒；升级到付费实例可保持常驻
 
 ## 路由
 

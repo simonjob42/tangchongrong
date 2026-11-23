@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npx --yes serve@14 out",
+    "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run typecheck && npm run build"
