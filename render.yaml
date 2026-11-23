@@ -1,3 +1,5 @@
+# Render Blueprint。若服务是本文件创建并管理，Render 会按这里同步设置；
+# 手动创建的服务不会被同步，需要按 docs/render-setup.md 的核对表逐项对照。
 services:
   - type: web
     name: tang-chongrong
@@ -7,7 +9,8 @@ services:
     region: singapore
     branch: master
     buildCommand: npm ci && npm run build
-    startCommand: npm start
+    # 512 MB 实例：只给运行时进程设 V8 堆上限，构建阶段不限制（构建需要更多内存）
+    startCommand: NODE_OPTIONS=--max-old-space-size=384 npm start
     healthCheckPath: /
     autoDeploy: true
     envVars:
@@ -15,6 +18,6 @@ services:
         value: "24"
       - key: NEXT_TELEMETRY_DISABLED
         value: "1"
-      # 自定义域名；本地默认值见 src/components/sites/tang-chongrong/data/site.ts
+      # 正式域名。代码会忽略 *.onrender.com 之类的值，见 docs/render-setup.md
       - key: NEXT_PUBLIC_SITE_URL
         value: https://beyondonline.org

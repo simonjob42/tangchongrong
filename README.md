@@ -37,9 +37,10 @@ NEXT_OUTPUT=export npm run build       # 静态导出到 out/（静态托管用�
 
 - 线上地址：<https://beyondonline.org/>（Render 服务名 `tang-chongrong`）
 - push 到 `master` 后自动构建部署
-- 构建命令 `npm ci && npm run build`，启动命令 `npm start`
-- 环境变量 `NEXT_PUBLIC_SITE_URL=https://beyondonline.org` 决定 canonical、RSS 与分享链接里的站点地址
+- 构建命令 `npm ci && npm run build`，启动命令 `NODE_OPTIONS=--max-old-space-size=384 npm start`
+- 环境变量 `NEXT_PUBLIC_SITE_URL=https://beyondonline.org` 决定 canonical、RSS 与分享链接里的站点地址；代码会忽略 `*.onrender.com` 之类的值并回落到正式域名
 - 实例规格 Starter（0.5 CPU / 512 MB），常驻运行；免费实例闲置 15 分钟会休眠、首次访问需几十秒唤醒
+- 控制台设置核对、Blueprint 切换与环境变量清理见 [`docs/render-setup.md`](docs/render-setup.md)
 
 ## 路由
 
