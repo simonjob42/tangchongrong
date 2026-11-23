@@ -14,6 +14,6 @@ services:
         value: "24"
       - key: NEXT_TELEMETRY_DISABLED
         value: "1"
-      # 上线后如果服务名不同，把这里和 Render 控制台里的值一起改掉
+      # 自定义域名；本地默认值见 src/components/sites/tang-chongrong/data/site.ts
       - key: NEXT_PUBLIC_SITE_URL
-        value: https://tang-chongrong.onrender.com
+        value: https://beyondonline.org

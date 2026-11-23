@@ -1,6 +1,6 @@
 # 内容更新指南
 
-站点内容分两类：**自动生成的讲道目录**与**手写的编辑内容**。改完之后 push 到 `master`，Render 会自动构建并发布到 <https://tang-chongrong.onrender.com>。
+站点内容分两类：**自动生成的讲道目录**与**手写的编辑内容**。改完之后 push 到 `master`，Render 会自动构建并发布到 <https://beyondonline.org>。
 
 ## 数据流
 

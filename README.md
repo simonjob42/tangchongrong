@@ -35,10 +35,10 @@ NEXT_OUTPUT=export npm run build       # 静态导出到 out/（静态托管用�
 
 站点部署在 Render，配置见 [`render.yaml`](render.yaml)：
 
-- 线上地址：<https://tang-chongrong.onrender.com>（服务名可改）
+- 线上地址：<https://beyondonline.org/>（Render 服务名 `tang-chongrong`）
 - push 到 `master` 后自动构建部署
 - 构建命令 `npm ci && npm run build`，启动命令 `npm start`
-- 环境变量 `NEXT_PUBLIC_SITE_URL` 决定 canonical、RSS 与分享链接里的站点地址
+- 环境变量 `NEXT_PUBLIC_SITE_URL=https://beyondonline.org` 决定 canonical、RSS 与分享链接里的站点地址
 - 免费实例在 15 分钟无访问后休眠，首次访问需要几十秒唤醒；升级到付费实例可保持常驻
 
 ## 路由
