@@ -1,8 +1,7 @@
 # 文档
 
-项目级说明优先写在根目录 `README.md` 和 `AGENTS.md`。本目录用于放设计参考、截图和后续的数据说明。
+项目级说明优先写在根目录 `README.md` 和 `AGENTS.md`。本目录用于放页面截图、视觉对照和后续的数据说明。
 
 - `design-references/` — 页面截图、视觉对照
-- `assets/` — 文档配图
 
 站点数据来源与字段说明见 [`../data/README.md`](../data/README.md)。
