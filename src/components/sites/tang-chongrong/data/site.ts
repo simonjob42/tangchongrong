@@ -8,12 +8,21 @@ import type {
   TimelineEvent,
 } from '../types';
 
+// 规范站点地址在构建时内联，决定 canonical、og:url、RSS 与 llms.txt。
+// Render 的默认主机名（*.onrender.com）只用于直连调试，不能当作规范地址，
+// 否则线上会出现指向 onrender.com 的 canonical。遇到这类值一律回落到正式域名。
+const envSiteUrl = (process.env.NEXT_PUBLIC_SITE_URL || '').replace(/\/+$/, '');
+const SITE_URL =
+  envSiteUrl && !envSiteUrl.includes('.onrender.com')
+    ? envSiteUrl
+    : 'https://beyondonline.org';
+
 export const SITE = {
   name: '唐崇荣中文档案',
   shortName: '唐崇荣档案',
   tagline: '把唐崇荣牧师六十余年的事奉，按系列整理成一份可以随时查阅的讲道档案',
   description: `收录唐崇荣牧师 ${TOTAL_SERMONS} 篇公开讲道与问答，其中 ${TOTAL_TONG} 篇标题署名唐崇荣，涵盖创世记、约翰福音、罗马书、希伯来书等逐卷讲解，以及启示录七间教会、圣经中上帝对人的呼召、归正福音教会主日证道等 ${SERIES.length} 个系列，共约 ${TOTAL_HOURS} 小时。按系列、主题与关键词检索，并附 YouTube 原始视频。`,
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://beyondonline.org',
+  url: SITE_URL,
   author: 'qiaomu',
   email: '',
   github: '',
