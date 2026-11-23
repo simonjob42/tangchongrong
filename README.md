@@ -1,161 +1,85 @@
-<div align="center">
+# 唐崇荣中文档案
 
-# AI Website Cloner Template
+把唐崇荣牧师在 YouTube 公开频道 **@Gudao200** 上的讲道与问答，按系列整理成一份可检索的静态网站。
 
-### Clone any website with one command
+- 999 篇讲道与问答，其中 948 篇标题署名唐崇荣
+- 21 个系列，8 类（圣经讲解 / 专题系列 / 布道信息 / 实践神学 / 培灵信息 / 主日证道 / 问答 / 讲道集）
+- 已标注时长合计约 962 小时
+- 播放列表中署名为其他讲员的 32 条崇拜视频未收入；标题未注明讲员的 51 条标注为「讲员未标注」
+- 逐卷系列：创世记（106）、约翰福音（128）、罗马书（24）、雅各书（45）、希伯来书（152）；专题系列：启示录七间教会（15）、圣经中上帝对人的呼召（71）等
 
-Give your AI coding agent a URL and watch it recreate the website as a clean Next.js app.
+本站为非官方档案，视频由 YouTube 提供，版权归原讲员与发布机构所有。
 
-**Best results with [Claude Code](https://docs.anthropic.com/en/docs/claude-code) + Opus 5.5. Also supports Codex, Cursor, and OpenCode.**
+## 技术栈
 
-[![Use this template](https://img.shields.io/badge/Use_this_template-Create_your_copy-2ea44f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JCodesMore/ai-website-cloner-template/generate) [![Discord](https://img.shields.io/badge/Join_the_community-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/hrTSX5yTpB)
+Next.js 16（App Router、React 19、TypeScript strict）、Tailwind CSS v4、lucide-react。
 
-[Quick Start](#quick-start) · [Watch Demo](#demo) · [Supported Platforms](#supported-platforms)
-
-<a href="https://github.com/JCodesMore/ai-website-cloner-template/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" /></a> <a href="https://github.com/JCodesMore/ai-website-cloner-template"><img src="https://img.shields.io/github/stars/JCodesMore/ai-website-cloner-template?style=flat" alt="Stars" /></a> <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JCodesMore/ai-website-cloner-template/badges/token-badge.json" alt="tokens" />
-
-  <a href="https://trendshift.io/repositories/24302?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-24302" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/24302" alt="JCodesMore%2Fai-website-cloner-template | Trendshift" width="250" height="55" /></a> <a href="https://www.star-history.com/jcodesmore/ai-website-cloner-template/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=JCodesMore/ai-website-cloner-template&amp;theme=dark" /><source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/badge?repo=JCodesMore/ai-website-cloner-template" /><img alt="Star History Global Rank" src="https://api.star-history.com/badge?repo=JCodesMore/ai-website-cloner-template" width="216" height="55" /></picture></a>
-
-<br />
-<sub><strong>SPONSORED BY</strong></sub>
-<br /><br />
-<a href="https://www.swiftproxy.net/?ref=JCodesMore"><img src="docs/assets/sponsors/swiftproxy-banner.webp" alt="Swiftproxy residential proxies for inspecting websites from 195+ locations" width="680" /></a>
-<br />
-<sub>Inspect and compare websites from any region with rotating or static residential IPs in 195+ locations, over HTTP(S) and SOCKS5. Free testing, plus 10% off with code <code>PROXY90</code>. <a href="https://www.swiftproxy.net/?ref=JCodesMore">Try&nbsp;Swiftproxy&nbsp;→</a></sub>
-
-</div>
-
----
-
-## Demo
-
-[![Watch the demo](docs/design-references/comparison.png)](https://youtu.be/O669pVZ_qr0)
-
-> Click the image above to watch the full demo on YouTube.
-
-## Quick Start
-
-### 1. Set up your project
-
-**Recommended: ask your agent.** Paste this into Codex, Claude Code, or your coding agent:
-
-```text
-Set up https://github.com/JCodesMore/ai-website-cloner-template
-as a standalone project in a new folder on my computer.
-Ask me where to put it. Clone the repository, remove its origin remote,
-install dependencies, and run npm run check. Leave it ready for me
-to clone a website.
-```
-
-**Or create your own GitHub repository:**
-
-[![Use this template](https://img.shields.io/badge/Use_this_template-Create_your_copy-2ea44f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JCodesMore/ai-website-cloner-template/generate)
-
-Give it a name and click **Create repository**. Then give your agent the new repository's link and ask it to clone it onto your computer, install dependencies, and run `npm run check`.
-
-### 2. Clone a website
-
-Open the project in your agent with browser access enabled. In Claude Code or Cursor, run:
-
-```text
-/clone-website https://example.com
-```
-
-Replace the URL with the website you want to recreate. Once it's built, ask your agent for any changes you want.
-
-## Supported Platforms
-
-| Agent                                                         | Status                     |
-| ------------------------------------------------------------- | -------------------------- |
-| [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | **Recommended** — Opus 5.5 |
-| [Codex CLI](https://github.com/openai/codex)                  | Supported                  |
-| [OpenCode](https://opencode.ai/)                              | Supported                  |
-| [Cursor](https://cursor.com/)                                 | Supported                  |
-
-## Prerequisites
-
-- [Node.js](https://nodejs.org/) 24+
-- An AI coding agent (see [Supported Platforms](#supported-platforms))
-
-## Tech Stack
-
-- **Next.js 16** — App Router, React 19, TypeScript strict
-- **shadcn/ui** — Base UI primitives + Tailwind CSS v4
-- **Tailwind CSS v4** — oklch design tokens
-- **Lucide React** — default icons (replaced by extracted SVGs during cloning)
-
-## How It Works
-
-The `/clone-website` skill follows four steps:
-
-1. **Map** — map source URLs to local routes and preserve existing work.
-2. **Observe** — inspect desktop/mobile pages, extract real assets and fonts, and exercise alternate states.
-3. **Build** — implement editable components and working interactions; delegate independent sections when useful.
-4. **Compare** — review source and local pages at matched sizes/states, repair visible differences, and run the production check.
-
-Framer pages and animated sites have focused inspection guidance for responsive variants, media, sticky scenes, and scroll/time-driven motion. Direct HTTP or asset tools handle extraction where practical; browser comparisons establish appearance and behavior. Deliverables include route mappings, run instructions, comparison screenshots, and any remaining gaps.
-
-## Use Cases
-
-- **Platform migration** — rebuild a site you own from WordPress/Webflow/Squarespace into a modern Next.js codebase
-- **Lost source code** — your site is live but the repo is gone, the developer left, or the stack is legacy. Get the code back in a modern format
-- **Learning** — deconstruct how production sites achieve specific layouts, animations, and responsive behavior by working with real code
-
-## Not Intended For
-
-- **Phishing or impersonation** — this project must not be used for deceptive purposes, impersonation, or any activity that breaks the law.
-- **Passing off someone's design as your own** — logos, brand assets, and original copy belong to their owners.
-- **Violating terms of service** — some sites explicitly prohibit scraping or reproduction. Check first.
-
-## Project Structure
-
-```
-src/
-  app/              # Next.js routes
-  components/       # React components
-    ui/             # shadcn/ui primitives
-    sites/<site>/   # Source-specific components and extracted SVGs
-  lib/utils.ts      # cn() utility
-  types/            # TypeScript interfaces
-  hooks/            # Custom React hooks
-public/
-  sites/<site>/     # Source-specific images, fonts, videos, and other assets
-docs/
-  research/<site>/  # Page brief, asset map, and inspection evidence
-  design-references/ # Screenshots
-.agents/skills/
-  clone-website/    # Canonical skill and inspection reference
-.claude/commands/
-  clone-website.md  # Thin Claude Code bridge
-AGENTS.md           # Agent instructions (single source of truth)
-CLAUDE.md           # Claude Code config (imports AGENTS.md)
-```
-
-## Commands
+## 本地运行
 
 ```bash
-npm run dev    # Start dev server
-npm run build  # Production build
-npm run lint   # ESLint check
-npm run typecheck # TypeScript check
-npm run check  # Run lint + typecheck + build
+npm install
+npm run dev            # 开发模式，http://localhost:3000
+npm run check          # lint + typecheck + build
+npm run build
+npx next start -p 3100 # 生产预览；换一个端口可避开已占用端口
 ```
 
-### If using docker
+`next.config` 使用 `output: 'standalone'`，部署时也可以直接运行：
 
 ```bash
-docker compose up app --build # build and run the app
-docker compose up dev --build # run the app in dev mode on port 3001
+node .next/standalone/server.js
 ```
 
-## Agent Support
+## 路由
 
-The project keeps one portable Agent Skill at `.agents/skills/clone-website/`. Codex, Cursor, and OpenCode read it directly. Claude Code uses the small command bridge at `.claude/commands/clone-website.md` so `/clone-website` and its arguments continue to work without exposing a duplicate skill to the other agents.
+| 路径 | 内容 |
+| --- | --- |
+| `/` | 首页：主要系列、编辑精选、使用指南、神学脉络 |
+| `/series` | 21 个讲道系列总览 |
+| `/series/[slug]` | 单个系列，按集数排序，可搜索、按分类与时长筛选 |
+| `/archive` | 全部 999 篇，可搜索、分类、时长排序与随机浏览 |
+| `/ep/[slug]` | 单篇讲道：YouTube 嵌入、系列简介、相邻与相关讲道 |
+| `/qa` | 问答精选（89 篇） |
+| `/search` | 全站搜索 |
+| `/stats` | 数据总览：系列规模、分类分布、最长讲道、数据口径 |
+| `/about` | 小传、生平节点、神学脉络、事工、语录 |
+| `/disclaimer` | 版权与内容声明 |
+| `/feed.xml` | RSS 2.0（前 100 篇） |
+| `/llms.txt` | 面向 AI 代理的站点摘要 |
 
-## Star History
+## 数据管线
 
-![Star History Chart](docs/assets/star-history.png)
+```
+../tang-data/*.txt          # yt-dlp 导出的播放列表（videoId|title|duration）
+        │
+        ▼
+scripts/build-tang-data.mjs # 分类、集数提取、标题清洗、讲员归属、去重、排序
+        │
+        ▼
+src/components/sites/tang-chongrong/data/sermons.ts   # 自动生成，勿手改
+```
 
-## License
+重新生成：
 
-MIT
+```bash
+node scripts/build-tang-data.mjs
+```
+
+生成器会按标题优先归属系列（避免跨播放列表误归），跳过其他讲员的条目，并统计 `TOTAL_SERMONS`、`TOTAL_TONG`、`EXCLUDED_OTHER_PREACHERS`、`TOTAL_HOURS` 等常量，页面均引用这些常量，不写死数字。
+
+## 目录
+
+```
+src/app/                                  # 路由
+src/components/sites/tang-chongrong/      # 站点组件与数据
+  data/sermons.ts                         # 自动生成：999 条记录与查询函数
+  data/site.ts                            # 站点信息、时间线、主题、语录、编辑精选
+scripts/build-tang-data.mjs               # 数据生成脚本
+```
+
+## 内容说明
+
+- 系列归属、集数与主题由标题规则推断，可能与原始频道标注略有出入。
+- GRII 主日证道列表中部分视频标题未注明讲员，保留并标注「讲员未标注」，请以视频为准。
+- 小传、神学主题与语录为第三方整理，引用请回到原始出处。
+- 本站自行撰写的导读文字采用 CC BY 4.0；讲道内容版权归原权利人所有。

@@ -1,9 +1,9 @@
 {
-  "name": "ai-website-clone-template",
-  "version": "0.6.1",
+  "name": "tang-chongrong-archive",
+  "version": "0.1.0",
   "private": true,
-  "description": "Clone any website into a clean, modern Next.js codebase using AI coding agents",
-  "author": "JCodesMore",
+  "description": "唐崇荣牧师讲道中文档案：按系列整理 700+ 篇公开讲道与问答。",
+  "author": "qiaomu",
   "license": "MIT",
   "repository": {
     "type": "git",
