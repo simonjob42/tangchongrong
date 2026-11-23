@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { SERIES, TOTAL_HOURS, TOTAL_SERMONS, TOTAL_TONG } from './sermons';
 import type {
   FeaturedCollection,
@@ -31,6 +32,18 @@ export const SITE = {
   sourceNote:
     '本站讲道目录来自 YouTube 公开频道 @Gudao200 的播放列表，视频版权归唐崇荣牧师、STEMI 与各原始发布机构所有。',
 };
+
+/**
+ * 每页的 alternates：规范链接 + RSS 自动发现。
+ * 相对路径由 layout 的 metadataBase 解析成绝对地址；路径带尾斜杠以匹配
+ * next.config.ts 的 trailingSlash。
+ */
+export function canonicalAlternates(path: string): Metadata['alternates'] {
+  return {
+    canonical: path,
+    types: { 'application/rss+xml': '/feed.xml' },
+  };
+}
 
 export const NAV_LINKS: NavItem[] = [
   { href: '/', label: '首页' },

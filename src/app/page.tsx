@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Hero } from '@/components/sites/tang-chongrong/Hero';
@@ -10,6 +11,11 @@ import {
   SourceNote,
   ThemesPreview,
 } from '@/components/sites/tang-chongrong/HomeSections';
+import { canonicalAlternates } from '@/components/sites/tang-chongrong/data/site';
+
+export const metadata: Metadata = {
+  alternates: canonicalAlternates('/'),
+};
 
 const FEATURED_SERIES = [
   'yuehan-fuyin',

@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { SermonList } from '@/components/sites/tang-chongrong/SermonList';
 import { SERMONS, TOTAL_SERMONS } from '@/components/sites/tang-chongrong/data/sermons';
+import { canonicalAlternates } from '@/components/sites/tang-chongrong/data/site';
 
 export const metadata: Metadata = {
   title: '全部讲道',
   description: `浏览全部 ${TOTAL_SERMONS} 篇唐崇荣牧师讲道与问答，按分类、关键词与时长筛选。`,
+  alternates: canonicalAlternates('/archive/'),
 };
 
 export default function ArchivePage() {

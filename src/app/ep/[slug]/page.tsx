@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { SermonDetail } from '@/components/sites/tang-chongrong/SermonDetail';
 import { getSermon, SERMONS } from '@/components/sites/tang-chongrong/data/sermons';
+import { canonicalAlternates } from '@/components/sites/tang-chongrong/data/site';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: `唐崇荣牧师：${sermon.topic}`,
       images: [{ url: sermon.thumbnail, width: 480, height: 360, alt: sermon.topic }],
     },
+    alternates: canonicalAlternates(`/ep/${slug}/`),
   };
 }
 

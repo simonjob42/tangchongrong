@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { canonicalAlternates } from '@/components/sites/tang-chongrong/data/site';
 
 export const metadata: Metadata = {
   title: '版权与声明',
   description: '唐崇荣中文档案的内容性质、版权归属、准确性与隐私说明。',
+  alternates: canonicalAlternates('/disclaimer/'),
 };
 
 const sections = [

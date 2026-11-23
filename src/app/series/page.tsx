@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { SeriesGrid } from '@/components/sites/tang-chongrong/SeriesCard';
 import { CATEGORIES, SERIES, TOTAL_SERMONS } from '@/components/sites/tang-chongrong/data/sermons';
+import { canonicalAlternates } from '@/components/sites/tang-chongrong/data/site';
 
 export const metadata: Metadata = {
   title: '讲道系列',
   description: '唐崇荣牧师的 17 个讲道系列：圣经逐卷讲解、专题系列、布道信息、实践神学、主日证道与问答。',
+  alternates: canonicalAlternates('/series/'),
 };
 
 export default function SeriesPage() {

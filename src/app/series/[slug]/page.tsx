@@ -9,6 +9,7 @@ import {
   getSeriesSermons,
   SERIES,
 } from '@/components/sites/tang-chongrong/data/sermons';
+import { canonicalAlternates } from '@/components/sites/tang-chongrong/data/site';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: series.name,
     description: `${series.name}（${series.count} 讲）——${series.desc}`,
+    alternates: canonicalAlternates(`/series/${slug}/`),
   };
 }
 

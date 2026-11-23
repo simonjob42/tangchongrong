@@ -3,12 +3,14 @@ import Link from 'next/link';
 import { MessageCircleQuestion } from 'lucide-react';
 import { SermonList } from '@/components/sites/tang-chongrong/SermonList';
 import { SERMONS } from '@/components/sites/tang-chongrong/data/sermons';
+import { canonicalAlternates } from '@/components/sites/tang-chongrong/data/site';
 
 const qaSermons = SERMONS.filter((sermon) => sermon.category === '问答');
 
 export const metadata: Metadata = {
   title: '问答精选',
   description: `唐崇荣牧师 ${qaSermons.length} 篇信仰问答：婴儿洗、异端分辨、圣灵充满、苦难、传福音、教会生活等实际疑难。`,
+  alternates: canonicalAlternates('/qa/'),
 };
 
 export default function QaPage() {
