@@ -35,7 +35,8 @@ Thumbs.db
 AGENTS.md
 CLAUDE.md
 
-# Docs / research (large, not needed at runtime)
+# Source data / research (not needed at runtime)
+data
 docs
 scripts
 

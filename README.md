@@ -50,7 +50,8 @@ node .next/standalone/server.js
 ## 数据管线
 
 ```
-../tang-data/*.txt          # yt-dlp 导出的播放列表（videoId|title|duration）
+data/yt-dlp/*.txt           # yt-dlp 导出的播放列表（videoId|title|duration）
+data/playlists/*.txt        # 原始播放列表清单
         │
         ▼
 scripts/build-tang-data.mjs # 分类、集数提取、标题清洗、讲员归属、去重、排序
@@ -58,6 +59,8 @@ scripts/build-tang-data.mjs # 分类、集数提取、标题清洗、讲员归�
         ▼
 src/components/sites/tang-chongrong/data/sermons.ts   # 自动生成，勿手改
 ```
+
+数据来源与字段说明见 [`data/README.md`](data/README.md)。
 
 重新生成：
 
@@ -75,6 +78,8 @@ src/components/sites/tang-chongrong/      # 站点组件与数据
   data/sermons.ts                         # 自动生成：999 条记录与查询函数
   data/site.ts                            # 站点信息、时间线、主题、语录、编辑精选
 scripts/build-tang-data.mjs               # 数据生成脚本
+data/yt-dlp/                              # yt-dlp 导出的系列数据
+data/playlists/                           # 原始播放列表清单
 ```
 
 ## 内容说明

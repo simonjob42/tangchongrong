@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Build structured sermon data from yt-dlp TSV exports in ../tang-data.
+ * Build structured sermon data from yt-dlp TSV exports in data/yt-dlp.
  * Output: src/components/sites/tang-chongrong/data/sermons.ts
  *
  * Series assignment is driven by the title first (playlists often mix series),
@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-const DATA_DIR = path.resolve(ROOT, '..', 'tang-data');
+const DATA_DIR = path.join(ROOT, 'data', 'yt-dlp');
 const OUT = path.join(ROOT, 'src/components/sites/tang-chongrong/data/sermons.ts');
 
 const SERIES = [

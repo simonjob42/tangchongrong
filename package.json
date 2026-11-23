@@ -2,26 +2,16 @@
   "name": "tang-chongrong-archive",
   "version": "0.1.0",
   "private": true,
-  "description": "唐崇荣牧师讲道中文档案：按系列整理 700+ 篇公开讲道与问答。",
+  "description": "唐崇荣牧师讲道中文档案：按系列整理 999 篇公开讲道与问答。",
   "author": "qiaomu",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template.git"
-  },
-  "homepage": "https://github.com/JCodesMore/ai-website-cloner-template",
-  "bugs": {
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template/issues"
-  },
   "keywords": [
-    "claude-code",
-    "website-clone",
-    "reverse-engineering",
+    "sermon",
+    "archive",
+    "tang-chongrong",
     "nextjs",
-    "ai",
-    "template",
     "tailwindcss",
-    "shadcn-ui"
+    "youtube"
   ],
   "engines": {
     "node": ">=24"
