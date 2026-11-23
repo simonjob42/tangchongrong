@@ -58,6 +58,8 @@ NEXT_OUTPUT=export npm run build       # 静态导出到 out/（静态托管用�
 | `/disclaimer` | 版权与内容声明 |
 | `/feed.xml` | RSS 2.0（前 100 篇） |
 | `/llms.txt` | 面向 AI 代理的站点摘要 |
+| `/sitemap.xml` | 站点地图（1028 条：静态页 + 21 个系列 + 999 篇讲道） |
+| `/robots.txt` | 抓取规则，指向 sitemap |
 
 ## 数据管线
 
